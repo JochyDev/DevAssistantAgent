@@ -1,7 +1,7 @@
 import { config } from "../config.js";
 import { client } from "./anthropic-client.js";
 
-async function streamClaude(prompt: string, systemPrompt?: string): Promise<string> {
+export async function streamClaude(prompt: string, systemPrompt?: string): Promise<string> {
     let fullResponse = "";
     const responseStream = await client.messages.stream({
         model: config.anthropicModel,
