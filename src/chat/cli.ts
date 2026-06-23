@@ -41,8 +41,8 @@ export async function starCLI(): Promise<void> {
             if(userInput === "/exit"){
                 const stats = conversation.getStats();
                 console.log(` Resumen: ${stats.turns} turnos ` +
-                  `${stats.inputTokens} tokens de entrada` +
-                  `${stats.outputTokens} tokens de salida` 
+                  `${stats.inputTokens} tokens de entrada ` +
+                  `${stats.outputTokens} tokens de salida ` 
                 );
                 rl.close();
                 return;
@@ -79,5 +79,6 @@ export async function starCLI(): Promise<void> {
             promptUser();
         })
     }
-    
+    promptUser();
+
 }
