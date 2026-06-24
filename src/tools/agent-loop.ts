@@ -46,6 +46,7 @@ export async function runWithTools(prompt: string, systemPrompt?: string, tools?
 
                 const toolOuput = await executeTool(block.name, block.input as Record<string, unknown>)
                 console.log(`Herramientas completadas: ${block.name}`)
+                return toolOuput;
             }))
 
             const toolResultContent: Anthropic.Messages.ToolResultBlockParam[] = toolUseBlock.map((block, i) => ({
