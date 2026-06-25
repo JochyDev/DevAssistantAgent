@@ -51,7 +51,7 @@ export interface AppConfig {
     openaiApiKey?: string;
     anthropicModel: string;
     openaiModel?: string;
-    openaiEmbeddingModel?: string;
+    openaiEmbeddingModel: string;
     docsPath: string;
     dbPath: string;
     ragTopK: number;
