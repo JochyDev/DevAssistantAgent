@@ -31,10 +31,10 @@ export async function runIngest(docsPath: string = config.docsPath): Promise<voi
     console.log(`Embeddings generados ${dimensions} dimensiones c/u`);
     const preview = chunks.map((chunk, i) => ({
         id: chunk.id,
-        content: chunk.content.slice(0, 200) + (chunk.content.length) ? "..." : "",
+        content: chunk.content.slice(0, 200) + (chunk.content.length ? "..." : "" ),
         metadata: chunk.metadata,
         embeddingsPreview: (embeddings[i] ?? [] ).slice(0, 5),
-        embeddingsDims: embeddings[i] ?? 0, 
+        embeddingsDims: embeddings[i]?.length ?? 0, 
     }))
 
     await fs.mkdir(path.dirname(PREVIEW_JSON), {recursive: true})

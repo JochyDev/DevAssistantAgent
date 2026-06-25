@@ -5,12 +5,12 @@ import { VectorStore } from "./vector-store.js";
 
 
 
-let vectorStoreInstence: VectorStore | null = null;
+let vectorStoreInstance: VectorStore | null = null;
 function getStore(): VectorStore {
-    if(!vectorStoreInstence ) {
-        vectorStoreInstence = new VectorStore(config.dbPath);
+    if(!vectorStoreInstance ) {
+        vectorStoreInstance = new VectorStore(config.dbPath);
     }
-    return vectorStoreInstence;
+    return vectorStoreInstance;
 }
 
 export async function retrieveContext( query: string, topK: number = config.ragTopK): Promise<RetrievedChunk[]> {
@@ -29,4 +29,11 @@ export async function retrieveContext( query: string, topK: number = config.ragT
     const preview = query.length > 50 ? query.slice(0, 50) + "..." : query;
     console.log(`Buscando: "${preview}" -> ${chunks.length} chunks recuperados`);
     return chunks;
+}
+
+export function resetStore(): void {
+  if (vectorStoreInstance) {
+    vectorStoreInstance.close();
+    vectorStoreInstance = null;
+  }
 }
