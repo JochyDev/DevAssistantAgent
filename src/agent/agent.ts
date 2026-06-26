@@ -67,7 +67,7 @@ export class DevAssistantAgent {
                         role: "assistant",
                         content: streamedText || finalText
                     })
-                    console.log("Respuesta final generada\n");
+                    console.log("\nRespuesta final generada\n");
                     return {
                         text: streamedText || finalText,
                         toolsUsed,
