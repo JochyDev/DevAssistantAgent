@@ -1,6 +1,6 @@
 # DevAssistant
 
-[![Abrir en Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-181717?logo=github)](https://codespaces.new/tu-usuario/dev-assistant)
+[![Abrir en Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-181717?logo=github)](https://codespaces.new/JochyDev/DevAssistantAgent)
 
 > Agente inteligente de documentación técnica con RAG, Function Calling y Claude API.
 
@@ -78,7 +78,7 @@ Las API keys se inyectan automáticamente desde tus Secrets — no necesitas edi
 
 ```bash
 # 1. Clona el repositorio
-git clone https://github.com/DevTalles-corp/node-dev-assistant
+git clone https://github.com/JochyDev/DevAssistantAgent
 cd dev-assistant
 
 # 2. Instala las dependencias
